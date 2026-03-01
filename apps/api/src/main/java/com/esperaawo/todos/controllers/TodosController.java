@@ -1,8 +1,8 @@
 package com.esperaawo.todos.controllers;
 
-import com.esperaawo.todos.domain.Todo;
+import com.esperaawo.todos.domain.models.Todo;
 import com.esperaawo.todos.dtos.CreateTodoDto;
-import com.esperaawo.todos.services.TodoService;
+import com.esperaawo.todos.data.services.TodoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +25,7 @@ public class TodosController {
     @GetMapping("/todos/{id}")
     ResponseEntity<Todo> getById(@PathVariable String id) {
         final Todo todo = todoService.find(Long.parseLong(id));
+
         if (todo == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
