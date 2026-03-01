@@ -1,6 +1,6 @@
 # Todo App
 
-A full-stack task management application with a Spring Boot backend API and an Angular frontend (planned).
+A full-stack task management application with a Spring Boot backend API and an Angular frontend.
 
 ## Project Structure
 
@@ -8,7 +8,7 @@ A full-stack task management application with a Spring Boot backend API and an A
 todo_app/
 ├── apps/
 │   ├── api/          # Spring Boot backend (Java 17, Gradle)
-│   └── web/          # Angular frontend (planned)
+│   └── web/          # Angular frontend (Angular 21)
 └── README.md
 ```
 
@@ -109,14 +109,55 @@ Returns `404 Not Found` if the todo does not exist.
 
 ## Frontend (Web)
 
-> **Status:** Not yet implemented.
+The frontend is an Angular 21 application with TailwindCSS for styling and server-side rendering (SSR) support.
 
-The frontend will be an Angular application located in `apps/web/`.
+### Tech Stack
+
+- **Angular 21.2.0**
+- **TailwindCSS 4.1.12** for styling
+- **Lucide Angular** for icons
+- **Angular SSR** for server-side rendering
+- **Vitest** for testing
+- **npm 11.9.0** as package manager
+
+### Prerequisites
+
+- Node.js 20+
+- npm 11.9.0+
+
+### Installation
+
+From the `apps/web` directory:
+
+```sh
+npm install
+```
+
+### Running the Frontend
+
+```sh
+npm start
+```
+
+The application starts on `http://localhost:4200`.
+
+### Building for Production
+
+```sh
+npm run build
+```
+
+### Running Tests
+
+```sh
+npm test
+```
 
 ## Roadmap
 
 - [ ] Add persistent storage via JPA entities and repositories
 - [ ] Update and delete todo endpoints
 - [ ] Mark todos as completed
-- [ ] Scaffold Angular frontend
+- [x] Scaffold Angular frontend
+- [ ] Implement todo components in Angular
 - [ ] Connect frontend to backend API
